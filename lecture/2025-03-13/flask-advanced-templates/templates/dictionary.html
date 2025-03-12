@@ -1,0 +1,18 @@
+<html><body>
+<table> 
+  <tr><th>Name</th>
+      <th>Alter</th>
+      <th>Hobbies</th></tr>
+{% for person in persons %}
+   <tr>
+      <td>{{ person.name }}</td>
+      <td>{{ person.alter }}</td>
+      <td><ul> <!-- Zelle mit Aufzählung der Hobbies -->
+          {% for hobby in person.hobbies %}
+             <li>{{ hobby }}</li>
+          {% endfor %}
+      </ul></td>
+   </tr>
+{% endfor %}
+</table>
+</body></html>
