@@ -1,0 +1,16 @@
+{"AXD": {"title": "Grundzüge der Programmierung",
+             "author": "Daniel Streiff",
+             "year": 2025,
+             "price": 25.95,
+             "available": True},
+	 "CCQ": {"title": "Python für Anfänger",
+             "author": "Anna Kurz",
+             "year": 2024,
+             "price": 30.95,
+             "available": True},
+     "XDL": {"title": "Webapplikationen mit Flask erstellen",
+             "author": "Joe Smith",
+             "year": 2025,
+             "price": 45.35,
+             "available": False}
+}
