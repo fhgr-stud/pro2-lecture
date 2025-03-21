@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detailseite {{ produkt.name }}</title>
+</head>
+<body>
+     <h1>{{ produkt.name }}</h1>
+    <p>Preis: {{ produkt.preis }} €</p>
+    <img src="{{ produkt.bild }}" alt="{{ produkt.name }}" >
+
+    <hr>
+    
+   <p><a href="/">Zurück zur Übersicht</a></p>
+    
+    <style>
+        img {
+            width: 200px;
+        }
+    </style>
+</body>
+</html>
+   
