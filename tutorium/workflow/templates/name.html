@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eingabe Name</title>
+</head>
+<body>
+  <form action="/chur" method="POST">
+      <input name="name" type="text" value="Name" />
+      <input type="submit" value="Absenden" />
+  </form>
+  {% if name %}
+    {{ name }}, willkommen in Chur!
+  {% else %}
+     Bitte geben Sie Ihren Namen ein!
+  {% endif %}
+xyz
+</body>
+</html>
