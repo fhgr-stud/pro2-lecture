@@ -3,8 +3,7 @@ from sqlalchemy.orm import declarative_base
 from sqlalchemy import Column, String, Integer, Float
 from sqlalchemy.orm import sessionmaker
 
-
-engine = create_engine('sqlite:///newsletter.db', echo=True)
+engine = create_engine('sqlite:///beispiel.db', echo=True)
 
 # Basisklasse für die Datenklassen
 Base = declarative_base()
@@ -17,6 +16,7 @@ class Entry(Base):
     value2 = Column(Integer)
     value3 = Column(Float)
 
+    # Optional: gibt einfach das Objekt "schön" aus.
     def __repr__(self):
         return f"<Entry(email={self.key}, name={self.value1}, firma={self.value2}, kanton={self.value3})>"
 
