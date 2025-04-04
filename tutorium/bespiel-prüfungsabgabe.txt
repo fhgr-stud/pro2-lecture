@@ -1,0 +1,14 @@
+# templates/index.html
+
+<form action="/anmelden">
+  <input type="name" ..">
+</form>
+
+
+# app.py
+
+from flask import Flask, ...
+
+app = Flask("newsletter")
+
+...
