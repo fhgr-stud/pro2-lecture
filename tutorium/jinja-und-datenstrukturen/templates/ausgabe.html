@@ -1,0 +1,33 @@
+<h1>Ausgabe</h1>
+
+{% for benutzer in benutzerliste %}
+    <li>{{ benutzer }} - {{ benutzerliste[benutzer] }}</li>
+{% endfor %}
+
+<hr>
+
+<h2>Variante 2</h2>
+{% for key, benutzer in benutzerliste.items() %}
+    <li>{{ key }} - {{ benutzer["name"] }}, {{ benutzer["alter"] }}, {{ benutzer["produkte"] }}</li>
+{% endfor %}
+
+<h2>Variante 3</h2>
+
+<table border="1">
+{% for key, benutzer in benutzerliste.items() %}
+    <tr><td>{{ benutzer.name }}</td>
+        <td>{% if benutzer.alter >=18 %}
+             volljährig
+            {% else %}
+            minderjährig
+            {% endif %}
+        </td>
+        <td>{{ benutzer.produkte }}</td>
+        <td>
+            {% for produkt in benutzer.produkte  %}
+              <li>{{ produkt }}</li>
+            {% endfor %}
+        </td>
+    </tr>
+{% endfor %}
+</table>
