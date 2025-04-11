@@ -27,7 +27,7 @@ def add_entry(key, value1, value2, value3):
     global engine
     Session = sessionmaker(bind=engine)
     session = Session()
-    entry = Entry(key, value1, value2, value3)
+    entry = Entry(key=key, value1=value1, value2=value2, value3=value3)
     session.add(entry)
     session.commit()
 

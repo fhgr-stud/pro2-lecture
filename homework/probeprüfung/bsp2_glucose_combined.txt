@@ -1,0 +1,49 @@
+# requirements.txt
+Flask
+
+
+# templates/eingabe.html
+<form action="/" method="POST">
+  Blutglukosewert: 
+  <input type="text" name="messwert" value="Messwert" />
+  <input type="submit" value="Prüfen >>" />
+</form>
+
+{% if mg %}
+Gemessener Wert: {{mg}}<br />
+Bewertung: 
+
+   {% if mg < 70 %}
+      Unterzucker
+   {% endif %} 
+   {% if mg >= 70 and mg < 100 %}
+      normal
+   {% endif %} 
+   {% if mg >= 100 and mg <= 200 %}
+      Prädiabetes
+   {% endif %} 
+   {% if mg >200 %}
+      Diabetes mellitus
+   {% endif %} 
+
+{% endif %}
+
+
+# bsp2_glucose.py
+import health
+from flask import Flask, render_template, make_response, request
+
+app = Flask("Workflow")    
+
+@app.route('/', methods=["GET", "POST"])
+def index(): 
+    messwert = request.form.get("messwert")
+    if messwert:
+        ergebnis = round(health.zu_mg_dl(float(messwert)), 2)
+    else:
+        ergebnis = None
+    return render_template("eingabe.html", mg=ergebnis)
+
+                                 
+if __name__ == '__main__':        
+   app.run(debug=True, port=5000)

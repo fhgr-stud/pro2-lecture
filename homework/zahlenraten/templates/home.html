@@ -1,0 +1,22 @@
+<h1>Zahlenraten</h1>
+
+Sie müssen eine Zahl zwischen 1 und 100 erraten. Bitte geben Sie ihren Tipp unten ein
+
+<form action="/" method="post">
+	<input name="geraten" />
+	<input type="submit" value="Raten" />
+</form>
+
+{% if geraten and geraten != zahl %}
+  <hr>
+  Ihre Zahl ist zu
+  {% if geraten > zahl %} gross {% else %} klein {% endif %}!
+{% else %}
+  {% if geraten == zahl %}
+    <hr>
+    Gratulation, Sie haben die Zahl erraten!
+  {% endif %}
+{% endif %}
+
+<hr>
+<a href="/newdigit">Neue Zahl generieren</a>

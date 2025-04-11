@@ -1,0 +1,8 @@
+<html>
+
+<ol>
+{% for id, person in personen.items() %}
+   <li>{{person["name"]}}, wohnhaft in {{person["wohnort"]}} mit Hobbies {{", ".join(person["hobbies"])}}
+{% endfor %}</li>
+</ol>
+</html>

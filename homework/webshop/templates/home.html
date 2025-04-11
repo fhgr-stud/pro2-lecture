@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+</head>
+<body>
+    <h1>Obst-Shop</h1>
+    <table>
+    <!-- eine Schleife mit Jinja, id ist die Nummer und Produkt enthält die Produktdaten -->
+    {% for id, produkt in produkte.items() %}
+       <tr>
+	       <td>{{id}}</td>
+	       <td><a href="produkt/{{id}}">{{produkt.name}}</a></td>
+	       <td>{{produkt.preis}}</td>
+      </tr>
+    {% endfor %}
+    </table>
+
+</body>
+</html>

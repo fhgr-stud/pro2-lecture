@@ -1,0 +1,25 @@
+<form action="/" method="POST">
+  Blutglukosewert: 
+  <input type="text" name="messwert" value="Messwert" />
+  <input type="submit" value="Prüfen >>" />
+</form>
+
+{% if mg %}
+Gemessener Wert: {{mg}}<br />
+Bewertung: 
+
+   {% if mg < 70 %}
+      Unterzucker
+   {% endif %} 
+   {% if mg >= 70 and mg < 100 %}
+      normal
+   {% endif %} 
+   {% if mg >= 100 and mg <= 200 %}
+      Prädiabetes
+   {% endif %} 
+   {% if mg >200 %}
+      Diabetes mellitus
+   {% endif %} 
+
+{% endif %}
+
